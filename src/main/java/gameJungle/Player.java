@@ -1,39 +1,35 @@
 package gameJungle;
 
+import java.util.Scanner;
+
 public class Player {
 
-   Inverntory inverntory = new Inverntory();
 
-    public  int damage = 0;
-
-    public  int healty = 0 ;
-
-    public int money = 0 ;
-
-    String name ="";
+    private int damage;
+    private int health;
+    private int money;
+    private String name;
+    private String charNames;
 
 
-    public void selectChar(){
-
-    }
-
-    public Player(Inverntory inverntory, int damage, int healty, int money, String name) {
-        this.inverntory = inverntory;
-        this.damage = damage;
-        this.healty = healty;
-        this.money = money;
+    public Player(String name) {
         this.name = name;
     }
 
-    public Player() {
-    }
+    public void selectChar() {
 
-    public Inverntory getInverntory() {
-        return inverntory;
-    }
 
-    public void setInverntory(Inverntory inverntory) {
-        this.inverntory = inverntory;
+        GameChar[] charListe= {new Samurai(),new Knight(),new Archer()};
+        System.out.println("==============================");
+        for (GameChar gameChar:charListe) {
+            System.out.println("Karakter "+gameChar.getName()+
+                    "\t Hasar: "+gameChar.getDamage()+
+                    "\t  Sağlık: "+gameChar.getHealth()+
+                    "\t  Para: "+gameChar.getMoney());
+        }
+
+
+
     }
 
     public int getDamage() {
@@ -44,12 +40,12 @@ public class Player {
         this.damage = damage;
     }
 
-    public int getHealty() {
-        return healty;
+    public int getHealth() {
+        return health;
     }
 
-    public void setHealty(int healty) {
-        this.healty = healty;
+    public void setHealth(int health) {
+        this.health = health;
     }
 
     public int getMoney() {
@@ -66,5 +62,13 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getCharNames() {
+        return charNames;
+    }
+
+    public void setCharNames(String charNames) {
+        this.charNames = charNames;
     }
 }
